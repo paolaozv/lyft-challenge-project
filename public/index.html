@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="img/favicon.png"/>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Lyft</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="wrapper">
+<!-- Navbar -->
+  <nav class="navbar navbar-default">
+    <label class="sr-only">Sign Up</label>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a class="navbar-brand center-align" href="index.html"><img src="img/lyft_logotype.png" alt="lyft-logotype" class="img-responsive"></a>
+          <a href="https://www.lyft.com/signup" class="custom">Sign Up</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="https://www.lyft.com/signup">Cities<span class="sr-only">(current)</span></a></li>
+          <li><a href="https://help.lyft.com/hc/en-us">Help</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore <i class="fa fa-chevron-down explore" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action 1</a></li>
+              <li role="separator" class="divider"></li>
+             <li><a href="#">Action 2</a></li>
+             <li role="separator" class="divider"></li>
+             <li><a href="#">Action 3</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" class="drive-res">Drive with Lyft</a></li>
+          <li><a href="https://www.lyft.com/login">Log In</a></li>
+          <li><a href="https://www.lyft.com/signup"><span class="sign bolder">Sign Up</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+<!-- Map -->
+  <div id="map" class="map"></div>
+<!-- Inputs -->
+  <div id="estimate-fare" class="halfpad inputbox text-center">
+    <div class="white">
+      <span class="label-input">Estimate fare</span>
+      <hr class="five">
+      <div class="row">
+        <div class="col-md-2 col-xs-2">
+          <i class="circles purple fa fa-circle" aria-hidden="true"></i>
+        </div>
+        <div class="col-md-10 col-xs-10">
+          <input class="route-input" placeholder="Add Pickup Location" type="text" id="origin">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 col-xs-2">
+          <span class="graypipe">|</span>
+        </div>
+        <div class="col-md-10 col-xs-10">
+          <hr class="ten">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 col-xs-2">
+          <i class="circles fucsia fa fa-circle" aria-hidden="true"></i>
+        </div>
+        <div class="col-md-10 col-xs-10">
+          <input class="route-input" placeholder="Add Destination" type="text" id="destination">
+        </div>
+      </div>
+     </div>
+    <button type="submit" class="buttons" id="button-getestimate">
+      <span class="get">Get Estimate</span>
+      <div class="spinner"></div>
+    </button>
+  </div>
+  <!-- Ride types -->
+  <div id="signup-ride" class="inputbox text-center">
+    <div class="white pad">
+      <span class="label-input typeride">Available ride types</span>
+      <div id="calculate"></div>
+    </div>
+    <button class="buttons" id="button-signupride">Sign up and ride</button>
+  </div>
+  </div>
+  <!-- MODALS -->
+  <div id="modal"></div>
+  <!-- popup -->
+		<div class="modal fade" tabindex="-1" role="dialog" id="popup">
+	  	<div class="modal-dialog" role="document">
+	    	<div class="modal-content">
+	    	<div class="modal-header">
+	        <button type="button" class="close downpop" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	     	</div>
+	      <img src="img/popup.png" class="image-pop" alt="coupon">
+	      <a type="button" class="btn btn-primary downpop download" href="img/popup.png" download>Download now</a>
+	  	</div>
+    </div>	
+	</div>
+
+<!-- Scripts -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4uAvzNTBk-4v0syI13ke6-nZ1vLjuQ2E&libraries=places"></script>
+  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="//use.fontawesome.com/a4f2ba36c5.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+	<script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBFlbSwgkGSPrFaHU--6Wu-zhAdqvBoTrA",
+        authDomain: "lyft-challenge-a9a34.firebaseapp.com",
+        databaseURL: "https://lyft-challenge-a9a34.firebaseio.com",
+        storageBucket: "lyft-challenge-a9a34.appspot.com",
+        messagingSenderId: "920469509568"
+      };
+      firebase.initializeApp(config);
+    </script>
+  <script src="js/main.js"></script>
+  <script src="js/input.js"></script>
+</body>
+</html>

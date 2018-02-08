@@ -1,0 +1,211 @@
+.navbar
+  height 10vh
+  margin-bottom 0px
+
+.map
+  height: 90vh
+  width: 100%
+
+#estimate-fare
+  position absolute
+  top 80px
+  left 20px
+  z-index 3 !important
+  .est
+    margin 20px
+  .five
+    margin 5px 0px
+  .ten
+    margin 10px 0px
+
+#signup-ride
+  position absolute
+  top 220px
+  left 20px
+  z-index 3 !important
+  display none
+  .white
+    padding 20px
+    .sep
+      margin 10px 0px !important
+    .image
+      img
+        width 80%
+        margin-left 20%
+    .title
+      color $berry
+      font-weight lighter
+      margin 0px
+    .status
+      color $charc
+      font-size: 10px
+      margin-top -10px
+    .price
+      color $berry
+    .info
+      color $charc
+      font-size 10px
+    .car
+      float left
+      width 25%
+    .content
+      float left
+      width 50%
+      padding-left 30px
+    .prices
+      float left
+      width 25%
+      padding-right 10px
+      i
+        color $gray
+        cursor pointer
+
+
+.inputbox
+  width 25%
+  .buttons
+    background-color $pink
+    width 100%
+    color white
+    border none
+    border-radius 6px
+    padding 10px 0px
+    font-weight bolder
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);
+  .white
+    background-color white
+    padding 10px 0px
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.3);
+    border-radius 10px
+    margin-bottom 10px
+    .typeride
+      margin-bottom 10px
+    .label-input
+      color $pink
+      text-transform uppercase
+      font-weight bolder
+    .route-input
+      display block
+      border none
+      width 90%
+      margin: 5px 0px;
+      &:focus
+        outline 0 !important
+    .circles
+      font-size 10px
+      margin: 10px 0px 5px 20px
+    .fucsia
+      color $pink
+    .purple
+      color $berry
+    .graypipe
+      color #ccc
+      margin-left 20px
+
+.showRides
+  display block !important
+.hideButton
+  display none
+
+.pac-container:after
+  background-image none !important
+  height 0px
+
+.infoimg
+  width 12px
+
+.sign
+  color white
+
+.image-pop
+  width 100%
+  height 300px
+
+.download
+  width 100%
+  margin-top 1.5em
+  margin-bottom 0.5em
+  padding 0.6em 0.5em
+  height 40px
+  background-color $pink
+  border-color $pink
+  color $white
+
+.download:hover
+  background-color $pink
+  border-color $pink
+
+//spinner
+
+.spinner {
+  display: none;
+  font-size: 10px;
+  margin: 0 auto;
+  text-indent: -9999em;
+  width: 2.1em;
+  height: 2.1em;
+  border-radius: 50%;
+  background: #ffffff;
+  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  position: relative;
+  -webkit-animation: load 1.4s infinite linear;
+  animation: load 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.spinner:before {
+  width: 50%;
+  height: 50%;
+  background: #ffffff;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+
+.spinner:after {
+  background: $pink;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
